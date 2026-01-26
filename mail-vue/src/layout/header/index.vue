@@ -255,7 +255,8 @@ function formatName(email) {
 <style lang="scss" scoped>
 
 :deep(.el-popper.is-pure) {
-  border-radius: 6px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--gmail-shadow-md);
 }
 
 .user-details {
@@ -332,17 +333,18 @@ function formatName(email) {
   }
 
   .details-avatar {
-    margin-top: 20px;
-    height: 40px;
-    width: 40px;
-    background: var(--el-bg-color);
+    margin-top: var(--space-5);
+    height: 48px;
+    width: 48px;
+    background: var(--gmail-surface-variant);
     color: var(--el-text-color-primary);
-    border: 1px solid var(--dark-border);
-    font-size: 18px;
+    border: 2px solid var(--gmail-border);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-medium);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: var(--radius-full);
   }
 }
 
@@ -365,23 +367,30 @@ function formatName(email) {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 5px;
+  margin-left: var(--space-2);
 
   .writer {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
     color: #ffffff;
-    background: linear-gradient(135deg, #1890ff, #3a80dd);
-    transition: all 0.3s ease;
+    background: var(--gmail-primary);
+    transition: var(--transition-base);
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: var(--gmail-shadow-sm);
+
+    &:hover {
+      background: var(--gmail-primary-dark);
+      box-shadow: var(--gmail-shadow-md);
+      transform: translateY(-1px);
+    }
 
     .writer-text {
       margin-left: 15px;
-      font-size: 14px;
-      font-weight: bold;;
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-semibold);
     }
   }
 }
@@ -394,8 +403,8 @@ function formatName(email) {
 }
 
 .breadcrumb-item {
-  font-weight: bold;
-  font-size: 14px;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-lg);
   color: var(--el-text-color-primary);
   overflow: hidden;
   white-space: nowrap;
@@ -405,29 +414,30 @@ function formatName(email) {
 .toolbar {
   display: flex;
   justify-content: end;
-  gap: 15px;
+  gap: var(--space-2);
   @media (max-width: 767px) {
-    gap: 10px;
+    gap: var(--space-2);
   }
 
   .icon-item {
     align-self: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: var(--transition-fast);
   }
 
   .icon-item:hover {
-    background: var(--base-fill);
+    background: var(--gmail-surface-hover);
   }
 
   .notice {
     font-size: 22px;
-    margin-right: 4px;
+    margin-right: var(--space-1);
   }
 
   .dark-icon {
@@ -446,19 +456,25 @@ function formatName(email) {
     .avatar-text {
       background: var(--el-bg-color);
       color: var(--el-text-color-primary);
-      height: 30px;
-      width: 30px;
+      height: 32px;
+      width: 32px;
       display: flex;
       justify-content: center;
       align-items: center;
-      border-radius: 8px;
-      border: 1px solid var(--dark-border);
+      border-radius: var(--radius-full);
+      border: 2px solid var(--gmail-border);
+      font-weight: var(--font-weight-medium);
+      transition: var(--transition-fast);
+      
+      &:hover {
+        border-color: var(--gmail-border-hover);
+      }
     }
 
     .setting-icon {
       position: relative;
       top: 0;
-      margin-right: 10px;
+      margin-right: var(--space-3);
       bottom: 10px;
     }
   }

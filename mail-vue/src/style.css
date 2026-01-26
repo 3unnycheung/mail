@@ -1,3 +1,6 @@
+/* Import Gmail-inspired design system variables */
+@import './styles/variables.css';
+
 * {
     margin: 0;
     padding: 0;
@@ -27,10 +30,12 @@ html, body {
 }
 
 body {
-    font-family: -apple-system, Inter, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-    line-height: 1.5;
+    font-family: var(--font-family-base);
+    line-height: var(--line-height-normal);
     color: var(--el-text-color-primary);
-    font-size: 14px;
+    font-size: var(--font-size-base);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 html, body {
@@ -106,12 +111,12 @@ button, input, select, textarea {
 }
 
 :root {
-    --el-color-primary: #1890ff;
-    --el-color-primary-dark-2: #1064c0;
-    --el-color-primary-light-3: #4dabff;
-    --el-color-primary-light-5: #69c0ff;
-    --el-color-primary-light-7: #91d5ff;
-    --el-color-primary-light-9: #e6f7ff;
+    --el-color-primary: #1A73E8;
+    --el-color-primary-dark-2: #1557B0;
+    --el-color-primary-light-3: #4285F4;
+    --el-color-primary-light-5: #8AB4F8;
+    --el-color-primary-light-7: #AECBFA;
+    --el-color-primary-light-9: #E8F0FE;
 
     --extra-light-fill: #FAFCFF;
     --light-ill: #F5F7FA;
@@ -169,6 +174,125 @@ button, input, select, textarea {
 
 .el-input {
     --el-input-text-color: var(--el-text-color-primary) !important;
+}
+
+/* ============================================
+   ENHANCED BUTTON STYLES - Gmail Inspired
+   ============================================ */
+:deep(.el-button) {
+    border-radius: var(--radius-md);
+    font-weight: var(--font-weight-medium);
+    transition: var(--transition-fast);
+    border: 1px solid var(--gmail-border);
+}
+
+:deep(.el-button--primary) {
+    background-color: var(--gmail-primary);
+    border-color: var(--gmail-primary);
+    box-shadow: 0 1px 2px rgba(26, 115, 232, 0.2);
+}
+
+:deep(.el-button--primary:hover) {
+    background-color: var(--gmail-primary-dark);
+    border-color: var(--gmail-primary-dark);
+    box-shadow: 0 1px 3px rgba(26, 115, 232, 0.3);
+}
+
+:deep(.el-button--default) {
+    background-color: var(--gmail-surface);
+    border-color: var(--gmail-border);
+    color: var(--gmail-text-primary);
+}
+
+:deep(.el-button--default:hover) {
+    background-color: var(--gmail-surface-hover);
+    border-color: var(--gmail-border-hover);
+}
+
+/* ============================================
+   ENHANCED INPUT STYLES - Gmail Inspired
+   ============================================ */
+:deep(.el-input__wrapper) {
+    border-radius: var(--radius-md);
+    box-shadow: 0 0 0 1px var(--gmail-border) inset;
+    transition: var(--transition-fast);
+}
+
+:deep(.el-input__wrapper:hover) {
+    box-shadow: 0 0 0 1px var(--gmail-border-hover) inset;
+}
+
+:deep(.el-input__wrapper.is-focus) {
+    box-shadow: 0 0 0 2px var(--gmail-primary) inset !important;
+}
+
+:deep(.el-textarea__inner) {
+    border-radius: var(--radius-md);
+    border-color: var(--gmail-border);
+}
+
+:deep(.el-textarea__inner:hover) {
+    border-color: var(--gmail-border-hover);
+}
+
+:deep(.el-textarea__inner:focus) {
+    border-color: var(--gmail-primary);
+    box-shadow: 0 0 0 1px var(--gmail-primary);
+}
+
+/* ============================================
+   ENHANCED CARD & DIALOG STYLES
+   ============================================ */
+:deep(.el-card) {
+    border-radius: var(--radius-lg);
+    border-color: var(--gmail-border-light);
+    box-shadow: var(--gmail-shadow-sm);
+}
+
+:deep(.el-dialog) {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--gmail-shadow-lg);
+}
+
+:deep(.el-dialog__header) {
+    border-bottom: 1px solid var(--gmail-border-light);
+    padding: var(--space-5) var(--space-6);
+}
+
+:deep(.el-dialog__body) {
+    padding: var(--space-6);
+}
+
+:deep(.el-dropdown-menu) {
+    border-radius: var(--radius-md);
+    box-shadow: var(--gmail-shadow-md);
+    border-color: var(--gmail-border-light);
+}
+
+:deep(.el-popper) {
+    border-radius: var(--radius-md);
+}
+
+/* ============================================
+   ENHANCED TABLE STYLES
+   ============================================ */
+:deep(.el-table) {
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+}
+
+:deep(.el-table th) {
+    background-color: var(--gmail-surface-variant);
+    color: var(--gmail-text-primary);
+    font-weight: var(--font-weight-semibold);
+}
+
+:deep(.el-table td) {
+    border-bottom: 1px solid var(--gmail-border-light);
+}
+
+:deep(.el-table tr:hover > td) {
+    background-color: var(--gmail-surface-hover);
 }
 
 /* 视图过渡，基于径向剪裁 */

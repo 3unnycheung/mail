@@ -216,12 +216,13 @@ const handleDelete = () => {
 }
 
 .header-actions {
-  padding: 9px 15px;
+  padding: var(--space-3) var(--space-4);
   display: flex;
   align-items: center;
-  gap: 20px;
-  box-shadow: var(--header-actions-border);
+  gap: var(--space-5);
+  border-bottom: 1px solid var(--gmail-border-light);
   font-size: 18px;
+  background: var(--gmail-surface-variant);
   .star {
     display: flex;
     align-items: center;
@@ -230,6 +231,12 @@ const handleDelete = () => {
   }
   .icon {
     cursor: pointer;
+    color: var(--gmail-text-secondary);
+    transition: var(--transition-fast);
+    
+    &:hover {
+      color: var(--el-text-color-primary);
+    }
   }
 }
 
@@ -240,19 +247,20 @@ const handleDelete = () => {
 }
 
 .container {
-  font-size: 14px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 10px;
+  font-size: var(--font-size-base);
+  padding: var(--space-6) var(--space-8);
+  max-width: var(--content-max-width);
+  margin: 0 auto;
   @media (max-width: 1023px) {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: var(--space-4) var(--space-4);
   }
 
   .email-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--space-4);
+    line-height: var(--line-height-tight);
+    color: var(--gmail-text-primary);
   }
 
   .htm-scrollbar {
@@ -261,28 +269,39 @@ const handleDelete = () => {
   .content {
     display: flex;
     flex-direction: column;
+    background: var(--gmail-surface);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    box-shadow: var(--gmail-shadow-sm);
+    @media (max-width: 1023px) {
+      padding: var(--space-4);
+    }
 
     .att {
-      margin-top: 30px;
-      margin-bottom: 30px;
-      border: 1px solid var(--light-border-color);
-      padding: 14px;
-      border-radius: 6px;
+      margin-top: var(--space-8);
+      margin-bottom: var(--space-8);
+      border: 1px solid var(--gmail-border);
+      padding: var(--space-4);
+      border-radius: var(--radius-md);
       width: fit-content;
+      background: var(--gmail-surface-variant);
       .att-box {
         min-width: min(410px,calc(100vw - 60px));
         max-width: 600px;
         display: grid;
-        gap: 12px;
+        gap: var(--space-3);
         grid-template-rows: 1fr;
       }
 
       .att-title {
-        margin-bottom: 8px;
+        margin-bottom: var(--space-2);
         display: flex;
         justify-content: space-between;
         span:first-child {
-          font-weight: bold;
+          font-weight: var(--font-weight-semibold);
+        }
+        span:last-child {
+          color: var(--gmail-text-secondary);
         }
       }
 
@@ -291,12 +310,19 @@ const handleDelete = () => {
         div {
           align-self: center;
         }
-        background: var(--light-ill);
-        padding: 5px 7px;
-        border-radius: 4px;
+        background: var(--gmail-surface);
+        padding: var(--space-2) var(--space-3);
+        border-radius: var(--radius-sm);
         align-self: start;
         display: grid;
         grid-template-columns: auto 1fr auto auto;
+        transition: var(--transition-fast);
+        border: 1px solid var(--gmail-border-light);
+        
+        &:hover {
+          background: var(--gmail-surface-hover);
+          border-color: var(--gmail-border);
+        }
         .att-icon {
           display: grid;
         }
@@ -338,60 +364,63 @@ const handleDelete = () => {
 
     .email-info {
 
-      border-bottom: 1px solid var(--light-border-color);
-      margin-bottom: 20px;
-      padding-bottom: 8px;
+      border-bottom: 1px solid var(--gmail-border-light);
+      margin-bottom: var(--space-5);
+      padding-bottom: var(--space-3);
       @media (max-width: 1024px) {
-        margin-bottom: 15px;
+        margin-bottom: var(--space-4);
       }
       .date {
-        color: var(--regular-text-color);
-        margin-bottom: 6px;
+        color: var(--gmail-text-secondary);
+        margin-bottom: var(--space-2);
+        font-size: var(--font-size-sm);
       }
 
       .email-msg {
         max-width: 400px;
         width: fit-content;
-        margin-bottom: 15px;
+        margin-bottom: var(--space-4);
       }
 
       .send {
         display: flex;
-        margin-bottom: 6px;
+        margin-bottom: var(--space-2);
 
         .send-name {
-          color: var(--regular-text-color);
+          color: var(--gmail-text-secondary);
           display: flex;
           flex-wrap: wrap;
         }
 
         .send-name-title {
-          padding-right: 5px;
+          padding-right: var(--space-2);
         }
       }
 
       .receive {
-        margin-bottom: 6px;
+        margin-bottom: var(--space-2);
         display: flex;
         .receive-email {
           max-width: 700px;
           word-break: break-word;
         }
         span:nth-child(2) {
-          color: var(--regular-text-color);
+          color: var(--gmail-text-secondary);
         }
       }
 
       .send-source {
         white-space: nowrap;
-        font-weight: bold;
-        padding-right: 10px;
+        font-weight: var(--font-weight-semibold);
+        padding-right: var(--space-3);
+        min-width: 80px;
       }
 
       .source {
         white-space: nowrap;
-        font-weight: bold;
-        padding-right: 10px;
+        font-weight: var(--font-weight-semibold);
+        padding-right: var(--space-3);
+        min-width: 80px;
       }
     }
   }
@@ -409,14 +438,16 @@ const handleDelete = () => {
 }
 
 .email-text {
-  font-family: inherit;
+  font-family: var(--font-family-base);
   white-space: pre-wrap;
   word-break: break-word;
   margin: 0;
+  line-height: var(--line-height-relaxed);
+  color: var(--gmail-text-primary);
 }
 
 .bottom-distance {
-  margin-bottom: 30px;
+  margin-bottom: var(--space-8);
 }
 
 
