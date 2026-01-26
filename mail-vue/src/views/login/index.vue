@@ -577,74 +577,98 @@ function submitRegister() {
 
 .container {
   background: v-bind(loginOpacity);
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 48px;
+  padding-right: 48px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 450px;
+  width: 480px;
   height: 100%;
   border-left: 1px solid var(--login-border);
-  box-shadow: var(--el-box-shadow-light);
+  box-shadow: var(--elevation-2);
   @media (max-width: 1024px) {
-    padding: 20px 18px;
-    width: 384px;
-    margin-left: 18px;
+    padding: 24px 20px;
+    width: 400px;
+    margin-left: 20px;
   }
   @media (max-width: 767px) {
     border: 1px solid var(--login-border);
-    padding: 20px 18px;
-    border-radius: 6px;
+    padding: 24px 20px;
+    border-radius: var(--radius-lg);
     height: fit-content;
     width: 100%;
-    margin-right: 18px;
-    margin-left: 18px;
+    margin-right: 20px;
+    margin-left: 20px;
   }
 
   .btn {
-    height: 36px;
+    height: 44px;
     width: 100%;
-    border-radius: 6px;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.2px;
   }
 
   .form-desc {
-    margin-top: 5px;
-    margin-bottom: 18px;
+    margin-top: 8px;
+    margin-bottom: 24px;
     color: var(--form-desc-color);
+    font-size: 14px;
+    line-height: 1.5;
   }
 
   .form-title {
-    font-weight: bold;
-    font-size: 22px !important;
+    font-weight: 500;
+    font-size: 28px !important;
+    letter-spacing: -0.5px;
   }
 
   .switch {
-    margin-top: 20px;
+    margin-top: 24px;
     text-align: center;
 
     span {
       color: var(--login-switch-color);
       cursor: pointer;
+      font-weight: 500;
+      
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
   :deep(.el-input__wrapper) {
-    border-radius: 6px;
+    border-radius: var(--radius-md);
     background: var(--el-bg-color);
+    box-shadow: 0 0 0 1px var(--light-border) inset;
+    transition: box-shadow var(--transition-fast);
+    
+    &:hover {
+      box-shadow: 0 0 0 1px var(--dark-border) inset;
+    }
+    
+    &.is-focus {
+      box-shadow: 0 0 0 2px var(--el-color-primary) inset;
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+    }
   }
 
   .email-input :deep(.el-input__wrapper) {
-    border-radius: 6px 0 0 6px;
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
     background: var(--el-bg-color);
   }
 
   .el-input {
-    height: 38px;
+    height: 44px;
     width: 100%;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 
     :deep(.el-input__inner) {
-      height: 36px;
+      height: 42px;
+      font-size: 15px;
     }
   }
 }
@@ -675,10 +699,10 @@ function submitRegister() {
 
 :deep(.el-input-group__append) {
   padding: 0 !important;
-  padding-left: 8px !important;
-  padding-right: 4px !important;
+  padding-left: 12px !important;
+  padding-right: 8px !important;
   background: var(--el-bg-color);
-  border-radius: 0 8px 8px 0;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
 }
 
 :deep(.el-button+.el-button) {
@@ -686,7 +710,7 @@ function submitRegister() {
 }
 
 .register-turnstile {
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 
 .select {

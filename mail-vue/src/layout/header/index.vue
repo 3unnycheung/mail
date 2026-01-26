@@ -255,47 +255,52 @@ function formatName(email) {
 <style lang="scss" scoped>
 
 :deep(.el-popper.is-pure) {
-  border-radius: 6px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--elevation-2);
+  border: none;
 }
 
 .user-details {
-  width: 250px;
+  width: 260px;
   font-size: 14px;
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
+  padding: 8px 0;
 
   .user-name {
-    font-weight: bold;
-    margin-top: 10px;
+    font-weight: 500;
+    margin-top: 12px;
     padding-left: 20px;
     padding-right: 20px;
-    width: 250px;
+    width: 260px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     text-align: center;
+    font-size: 15px;
   }
 
   .detail-user-type {
-    margin-top: 10px;
+    margin-top: 12px;
   }
 
   .action-info {
     width: 100%;
     display: grid;
     grid-template-columns: auto auto;
-    margin-top: 10px;
+    margin-top: 12px;
+    padding: 0 12px;
 
     > div:first-child {
       display: grid;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     > div:last-child {
       display: grid;
-      gap: 10px;
+      gap: 12px;
       text-align: center;
 
       > div {
@@ -308,41 +313,47 @@ function formatName(email) {
   .detail-email {
     padding-left: 20px;
     padding-right: 20px;
-    width: 250px;
+    width: 260px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     text-align: center;
     color: var(--regular-text-color);
     cursor: pointer;
+    font-size: 13px;
+    margin-top: 4px;
+    
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   .logout {
     margin-top: 20px;
     width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
+    padding: 0 12px 12px;
 
     .el-button {
-      border-radius: 6px;
-      height: 28px;
+      border-radius: var(--radius-md);
+      height: 36px;
       width: 100%;
+      font-weight: 500;
     }
   }
 
   .details-avatar {
     margin-top: 20px;
-    height: 40px;
-    width: 40px;
-    background: var(--el-bg-color);
-    color: var(--el-text-color-primary);
-    border: 1px solid var(--dark-border);
-    font-size: 18px;
+    height: 48px;
+    width: 48px;
+    background: var(--el-color-primary-light-9);
+    color: var(--el-color-primary);
+    border: none;
+    font-size: 20px;
+    font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: var(--radius-full);
   }
 }
 
@@ -352,8 +363,9 @@ function formatName(email) {
   font-size: 12px;
   display: grid;
   height: 100%;
-  gap: 10px;
+  gap: 12px;
   grid-template-columns: auto auto 1fr;
+  padding: 0 8px;
 }
 
 .header.not-send {
@@ -365,23 +377,32 @@ function formatName(email) {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 5px;
+  margin-left: 8px;
 
+  /* Compose button - wider for icon visibility, height matches header items */
   .writer {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
+    width: 56px;
+    height: 40px;
+    border-radius: var(--radius-full);
     color: #ffffff;
-    background: linear-gradient(135deg, #1890ff, #3a80dd);
-    transition: all 0.3s ease;
+    background: var(--el-color-primary);
+    transition: all var(--transition-base);
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: 500;
+    box-shadow: var(--elevation-1);
+    
+    &:hover {
+      background: var(--el-color-primary-dark-2);
+      box-shadow: var(--elevation-2);
+      transform: translateY(-1px);
+    }
 
     .writer-text {
       margin-left: 15px;
       font-size: 14px;
-      font-weight: bold;;
+      font-weight: 500;
     }
   }
 }
@@ -391,34 +412,38 @@ function formatName(email) {
   align-items: center;
   height: 100%;
   min-width: 0;
+  gap: 12px;
 }
 
 .breadcrumb-item {
-  font-weight: bold;
-  font-size: 14px;
+  font-weight: 500;
+  font-size: 22px;
   color: var(--el-text-color-primary);
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  letter-spacing: -0.5px;
 }
 
 .toolbar {
   display: flex;
   justify-content: end;
-  gap: 15px;
+  align-items: center;
+  gap: 4px;
   @media (max-width: 767px) {
-    gap: 10px;
+    gap: 2px;
   }
 
   .icon-item {
     align-self: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-full);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: background var(--transition-fast);
   }
 
   .icon-item:hover {
@@ -427,7 +452,6 @@ function formatName(email) {
 
   .notice {
     font-size: 22px;
-    margin-right: 4px;
   }
 
   .dark-icon {
@@ -442,24 +466,35 @@ function formatName(email) {
     display: flex;
     align-items: center;
     cursor: pointer;
+    gap: 4px;
+    padding: 4px 8px 4px 4px;
+    border-radius: var(--radius-full);
+    transition: background var(--transition-fast);
+    
+    &:hover {
+      background: var(--base-fill);
+    }
 
     .avatar-text {
-      background: var(--el-bg-color);
-      color: var(--el-text-color-primary);
-      height: 30px;
-      width: 30px;
+      background: var(--el-color-primary-light-9);
+      color: var(--el-color-primary);
+      height: 32px;
+      width: 32px;
       display: flex;
       justify-content: center;
       align-items: center;
-      border-radius: 8px;
-      border: 1px solid var(--dark-border);
+      border-radius: var(--radius-full);
+      border: none;
+      font-weight: 500;
+      font-size: 14px;
     }
 
     .setting-icon {
       position: relative;
       top: 0;
-      margin-right: 10px;
+      margin-right: 4px;
       bottom: 10px;
+      color: var(--secondary-text-color);
     }
   }
 
