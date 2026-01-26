@@ -938,30 +938,31 @@ function loadData() {
 
 :deep(.email-row) {
   display: flex;
-  padding: 8px 0;
+  padding: 12px 0;
   justify-content: space-between;
-  box-shadow: var(--header-actions-border);
+  border-bottom: 1px solid var(--light-border);
   cursor: pointer;
   align-items: center;
   position: relative;
-  transition: background 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  height: 48px;
+  transition: background var(--transition-fast), box-shadow var(--transition-fast);
+  height: 56px;
   @media (max-width: 1366px) {
-    height: 83px;
+    height: 88px;
   }
   &.all-email {
-    height: 65px;
+    height: 72px;
     @media (max-width: 1366px) {
-      height: 132px;
+      height: 140px;
     }
   }
   .user-info {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 10px;
-    margin-top: 5px;
+    column-gap: 12px;
+    margin-top: 6px;
     margin-bottom: 2px;
     color: var(--email-scroll-content-color);
+    font-size: 13px;
     @media (max-width: 1366px) {
       flex-direction: column;
     }
@@ -970,8 +971,8 @@ function loadData() {
       overflow: hidden;
       white-space: nowrap;
       text-overflow: ellipsis;
-      transition: all 300ms;
-      line-height: 12px;
+      transition: all var(--transition-base);
+      line-height: 14px;
       max-width: 300px;
       min-width: 0;
 
@@ -984,7 +985,7 @@ function loadData() {
       }
 
       span:last-child {
-        margin-left: 5px;
+        margin-left: 6px;
         position: relative;
         bottom: 5px;
       }
@@ -993,15 +994,15 @@ function loadData() {
 
   .checkbox {
     display: flex;
-    padding-left: 15px;
-    padding-right: 20px;
+    padding-left: 20px;
+    padding-right: 24px;
     justify-content: center;
   }
 
   .all-email-checkbox {
     display: flex;
-    padding-left: 15px;
-    padding-right: 20px;
+    padding-left: 20px;
+    padding-right: 24px;
     justify-content: center;
     @media (min-width: 1367px) {
       justify-content: start;
@@ -1014,26 +1015,28 @@ function loadData() {
   .title-column {
     @media (max-width: 1366px) {
       grid-template-columns: 1fr !important;
-      gap: 4px !important;
+      gap: 6px !important;
     }
   }
 
   .title {
     flex: 1;
     display: grid;
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 260px 1fr;
+    gap: 4px;
     @media (max-width: 1366px) {
-      padding-right: 15px;
+      padding-right: 16px;
     }
     @media (max-width: 1366px) {
       grid-template-columns: 1fr;
-      gap: 4px;
+      gap: 6px;
     }
 
     .email-sender {
       color: var(--el-text-color-primary);
       display: grid;
       grid-template-columns: auto 1fr auto;
+      font-size: 14px;
 
       .email-status {
         display: flex;
@@ -1041,13 +1044,13 @@ function loadData() {
         align-content: center;
         @media (max-width: 1366px) {
           flex-direction: row;
-          gap: 5px;
+          gap: 6px;
         }
       }
 
       .name {
         display: grid;
-        gap: 5px;
+        gap: 6px;
         grid-template-columns: auto 1fr;
 
         > span:last-child {
@@ -1080,6 +1083,7 @@ function loadData() {
       .phone-time {
         font-weight: normal;
         font-size: 12px;
+        color: var(--secondary-text-color);
         @media (min-width: 1367px) {
           display: none;
         }
@@ -1113,6 +1117,7 @@ function loadData() {
     .email-text {
       display: grid;
       grid-template-columns: auto 1fr;
+      gap: 2px;
       @media (max-width: 1366px) {
         grid-template-columns: 1fr;
       }
@@ -1121,8 +1126,9 @@ function loadData() {
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+        font-size: 14px;
         @media (min-width: 1367px) {
-          padding-left: 5px;
+          padding-left: 0;
         }
       }
 
@@ -1130,8 +1136,9 @@ function loadData() {
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-        padding-left: 10px;
+        padding-left: 8px;
         color: var(--email-scroll-content-color);
+        font-size: 13px;
         @media (max-width: 1366px) {
           padding-left: 0;
           margin-top: 0;
@@ -1146,8 +1153,10 @@ function loadData() {
     font-size: 12px;
     white-space: nowrap;
     display: flex;
-    padding-left: 15px;
+    padding-left: 16px;
+    padding-right: 20px;
     align-items: center;
+    color: var(--secondary-text-color);
     @media (max-width: 1366px) {
       display: none;
     }
@@ -1162,6 +1171,7 @@ function loadData() {
   &:hover {
     background-color: var(--email-hover-background);
     z-index: 0;
+    box-shadow: inset 1px 0 0 var(--light-border), inset -1px 0 0 var(--light-border);
   }
 
   /*&[data-checked="true"] {
@@ -1206,42 +1216,51 @@ function loadData() {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 15px;
-  padding: 3px 15px;
-  box-shadow: var(--header-actions-border);
+  gap: 16px;
+  padding: 8px 20px;
+  border-bottom: 1px solid var(--light-border);
+  background: var(--el-bg-color);
+  min-height: 48px;
 
   .header-left {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     position: relative;
-    column-gap: 20px;
+    column-gap: 16px;
     row-gap: 8px;
     padding-left: 2px;
-    color: var(--el-text-color-primary);;
+    color: var(--el-text-color-primary);
   }
 
   .header-right {
     display: grid;
     grid-template-columns: auto auto;
-    align-items: start;
+    align-items: center;
+    gap: 16px;
     height: 100%;
-    color: var(--el-text-color-primary);;
+    color: var(--secondary-text-color);
 
     .email-count {
       white-space: nowrap;
-      margin-top: 6px;
+      font-size: 13px;
     }
   }
 
   .icon {
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
+    padding: 8px;
+    border-radius: var(--radius-full);
+    transition: background var(--transition-fast);
+    
+    &:hover {
+      background: var(--base-fill);
+    }
   }
 
   .more-icon {
-    margin-top: 8px;
-    margin-left: 15px;
+    margin-left: 4px;
   }
 }
 
@@ -1275,14 +1294,15 @@ function loadData() {
 }
 
 .unread {
-  height: 6px;
-  width: 6px;
+  height: 8px;
+  width: 8px;
   background: var(--el-color-primary);
   margin-bottom: 2px;
-  margin-right: 5px;
-  border-radius: 50%;
+  margin-right: 8px;
+  border-radius: var(--radius-full);
   display: inline-block;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 ul {
