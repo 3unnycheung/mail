@@ -1022,7 +1022,7 @@ function loadData() {
   .title {
     flex: 1;
     display: grid;
-    grid-template-columns: 260px 1fr;
+    grid-template-columns: var(--email-sender-width) 1fr;
     gap: 4px;
     @media (max-width: 1366px) {
       padding-right: 16px;

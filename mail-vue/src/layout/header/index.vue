@@ -379,6 +379,7 @@ function formatName(email) {
   justify-content: center;
   margin-left: 8px;
 
+  /* Compose button - wider for icon visibility, height matches header items */
   .writer {
     width: 56px;
     height: 40px;

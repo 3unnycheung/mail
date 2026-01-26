@@ -651,6 +651,8 @@ function submitRegister() {
     
     &.is-focus {
       box-shadow: 0 0 0 2px var(--el-color-primary) inset;
+      outline: 2px solid transparent;
+      outline-offset: 2px;
     }
   }
 

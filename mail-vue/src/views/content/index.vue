@@ -256,7 +256,7 @@ const handleDelete = () => {
 .container {
   font-size: 14px;
   padding: 20px;
-  max-width: 1000px;
+  max-width: var(--content-max-width);
   margin: 0 auto;
   
   @media (max-width: 1023px) {
