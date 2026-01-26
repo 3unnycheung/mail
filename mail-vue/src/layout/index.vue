@@ -60,10 +60,9 @@ onBeforeUnmount(() => {
 }
 
 .aside-show {
-  -webkit-box-shadow: var(--aside-right-border);
   box-shadow: var(--aside-right-border);
   transform: translateX(0);
-  transition: all 100ms ease;
+  transition: all 200ms ease;
   z-index: 101;
   @media (max-width: 1025px) {
     position: fixed;
@@ -102,8 +101,12 @@ onBeforeUnmount(() => {
 
 .el-header {
   background: var(--el-bg-color);
-  border-bottom: solid 1px var(--el-border-color);
-  padding: 0 0 0 0;
+  border-bottom: 1px solid var(--light-border);
+  padding: 0;
+  height: 64px;
+  box-shadow: 0 1px 2px rgba(60, 64, 67, 0.1);
+  z-index: 10;
+  position: relative;
 }
 
 .overlay-show {

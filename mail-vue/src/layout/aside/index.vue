@@ -83,38 +83,41 @@ const route = useRoute();
 <style lang="scss" scoped>
 
 .title {
-  margin: 15px 10px;
-  height: 45px;
-  border-radius: 6px;
+  margin: 20px 16px 16px;
+  height: 48px;
+  border-radius: var(--radius-lg);
   display: flex;
   position: relative;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 18px;
+  font-weight: 500;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 8px;
   color: #ffffff;
-  background: linear-gradient(135deg, #1890ff, #3a80dd);
-  transition: all 0.3s ease;
+  background: var(--el-color-primary);
+  transition: all var(--transition-base);
   max-width: 240px;
-  padding: 0 10px;
+  padding: 0 16px;
+  box-shadow: var(--elevation-1);
+  letter-spacing: -0.2px;
+  
   > div {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    max-width: calc(240px - 20px - 30px);
+    max-width: calc(240px - 32px - 30px);
   }
 
   :deep(.el-icon) {
     flex-shrink: 0;
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .user-right-icon {
     align-self: center;
     position: absolute;
     font-size: 12px;
-    right: 8px;
+    right: 12px;
     color: #ffffff;
   }
 
@@ -122,21 +125,27 @@ const route = useRoute();
 
 
 .manage-title {
-  margin-top: 10px;
-  padding-left: 20px;
-  color: #fff;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  padding-left: 28px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
 }
 
 .el-menu-item {
-  margin: 5px 10px !important;
-  border-radius: 6px;
-  height: 36px;
-  padding: 10px !important;
+  margin: 4px 12px !important;
+  border-radius: var(--radius-md);
+  height: 40px;
+  padding: 12px !important;
+  transition: all var(--transition-fast);
 }
 
 .choose-item {
-  font-weight: bold;
-  background: rgba(255, 255, 255, 0.08) !important;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.12) !important;
   backdrop-filter: blur(4px);
 }
 
@@ -148,6 +157,8 @@ const route = useRoute();
 
 .menu-name {
   user-select: none;
+  font-size: 14px;
+  letter-spacing: 0.2px;
 }
 
 
