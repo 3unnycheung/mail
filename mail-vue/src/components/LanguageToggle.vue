@@ -27,7 +27,6 @@ const settingStore = useSettingStore()
 const changeLanguage = (lang) => {
   settingStore.lang = lang
   locale.value = lang
-  localStorage.setItem('lang', lang)
 }
 </script>
 
