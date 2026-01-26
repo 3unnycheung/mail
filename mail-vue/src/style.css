@@ -176,6 +176,125 @@ button, input, select, textarea {
     --el-input-text-color: var(--el-text-color-primary) !important;
 }
 
+/* ============================================
+   ENHANCED BUTTON STYLES - Gmail Inspired
+   ============================================ */
+:deep(.el-button) {
+    border-radius: var(--radius-md);
+    font-weight: var(--font-weight-medium);
+    transition: var(--transition-fast);
+    border: 1px solid var(--gmail-border);
+}
+
+:deep(.el-button--primary) {
+    background-color: var(--gmail-primary);
+    border-color: var(--gmail-primary);
+    box-shadow: 0 1px 2px rgba(26, 115, 232, 0.2);
+}
+
+:deep(.el-button--primary:hover) {
+    background-color: var(--gmail-primary-dark);
+    border-color: var(--gmail-primary-dark);
+    box-shadow: 0 1px 3px rgba(26, 115, 232, 0.3);
+}
+
+:deep(.el-button--default) {
+    background-color: var(--gmail-surface);
+    border-color: var(--gmail-border);
+    color: var(--gmail-text-primary);
+}
+
+:deep(.el-button--default:hover) {
+    background-color: var(--gmail-surface-hover);
+    border-color: var(--gmail-border-hover);
+}
+
+/* ============================================
+   ENHANCED INPUT STYLES - Gmail Inspired
+   ============================================ */
+:deep(.el-input__wrapper) {
+    border-radius: var(--radius-md);
+    box-shadow: 0 0 0 1px var(--gmail-border) inset;
+    transition: var(--transition-fast);
+}
+
+:deep(.el-input__wrapper:hover) {
+    box-shadow: 0 0 0 1px var(--gmail-border-hover) inset;
+}
+
+:deep(.el-input__wrapper.is-focus) {
+    box-shadow: 0 0 0 2px var(--gmail-primary) inset !important;
+}
+
+:deep(.el-textarea__inner) {
+    border-radius: var(--radius-md);
+    border-color: var(--gmail-border);
+}
+
+:deep(.el-textarea__inner:hover) {
+    border-color: var(--gmail-border-hover);
+}
+
+:deep(.el-textarea__inner:focus) {
+    border-color: var(--gmail-primary);
+    box-shadow: 0 0 0 1px var(--gmail-primary);
+}
+
+/* ============================================
+   ENHANCED CARD & DIALOG STYLES
+   ============================================ */
+:deep(.el-card) {
+    border-radius: var(--radius-lg);
+    border-color: var(--gmail-border-light);
+    box-shadow: var(--gmail-shadow-sm);
+}
+
+:deep(.el-dialog) {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--gmail-shadow-lg);
+}
+
+:deep(.el-dialog__header) {
+    border-bottom: 1px solid var(--gmail-border-light);
+    padding: var(--space-5) var(--space-6);
+}
+
+:deep(.el-dialog__body) {
+    padding: var(--space-6);
+}
+
+:deep(.el-dropdown-menu) {
+    border-radius: var(--radius-md);
+    box-shadow: var(--gmail-shadow-md);
+    border-color: var(--gmail-border-light);
+}
+
+:deep(.el-popper) {
+    border-radius: var(--radius-md);
+}
+
+/* ============================================
+   ENHANCED TABLE STYLES
+   ============================================ */
+:deep(.el-table) {
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+}
+
+:deep(.el-table th) {
+    background-color: var(--gmail-surface-variant);
+    color: var(--gmail-text-primary);
+    font-weight: var(--font-weight-semibold);
+}
+
+:deep(.el-table td) {
+    border-bottom: 1px solid var(--gmail-border-light);
+}
+
+:deep(.el-table tr:hover > td) {
+    background-color: var(--gmail-surface-hover);
+}
+
 /* 视图过渡，基于径向剪裁 */
 html.dark,
 html:not(.dark) {

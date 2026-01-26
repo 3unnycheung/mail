@@ -1,3 +1,9 @@
+/* ============================================
+   INTER FONT SETUP
+   ============================================ */
+/* Using Google Fonts CDN for Inter with font-display: swap */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 /**
  * Gmail-Inspired Design System Variables
  * 
@@ -121,9 +127,3 @@
   --gmail-shadow-md: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 4px 8px 3px rgba(0, 0, 0, 0.15);
   --gmail-shadow-lg: 0 2px 6px 0 rgba(0, 0, 0, 0.3), 0 8px 16px 6px rgba(0, 0, 0, 0.15);
 }
-
-/* ============================================
-   INTER FONT SETUP
-   ============================================ */
-/* Using Google Fonts CDN for Inter with font-display: swap */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
