@@ -83,21 +83,27 @@ const route = useRoute();
 <style lang="scss" scoped>
 
 .title {
-  margin: 15px 10px;
-  height: 45px;
-  border-radius: 6px;
+  margin: var(--space-4) var(--space-3);
+  height: 48px;
+  border-radius: var(--radius-lg);
   display: flex;
   position: relative;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: var(--space-2);
   color: #ffffff;
-  background: linear-gradient(135deg, #1890ff, #3a80dd);
-  transition: all 0.3s ease;
+  background: var(--gmail-primary);
+  transition: var(--transition-base);
   max-width: 240px;
-  padding: 0 10px;
+  padding: 0 var(--space-3);
+  box-shadow: var(--gmail-shadow-sm);
+  
+  &:hover {
+    box-shadow: var(--gmail-shadow-md);
+  }
+  
   > div {
     overflow: hidden;
     white-space: nowrap;
@@ -122,21 +128,26 @@ const route = useRoute();
 
 
 .manage-title {
-  margin-top: 10px;
-  padding-left: 20px;
-  color: #fff;
+  margin-top: var(--space-4);
+  padding-left: var(--space-5);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .el-menu-item {
-  margin: 5px 10px !important;
-  border-radius: 6px;
-  height: 36px;
-  padding: 10px !important;
+  margin: var(--space-1) var(--space-3) !important;
+  border-radius: var(--radius-lg) !important;
+  height: 40px;
+  padding: var(--space-3) !important;
+  transition: var(--transition-fast);
 }
 
 .choose-item {
-  font-weight: bold;
-  background: rgba(255, 255, 255, 0.08) !important;
+  font-weight: var(--font-weight-semibold);
+  background: rgba(255, 255, 255, 0.12) !important;
   backdrop-filter: blur(4px);
 }
 
