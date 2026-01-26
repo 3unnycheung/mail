@@ -1,38 +1,31 @@
 <template>
-  <div class="language-toggle">
-    <el-button 
-      :type="settingStore.lang === 'zh' ? 'primary' : ''" 
-      @click="changeLanguage('zh')"
-      size="small"
-    >
-      中文
-    </el-button>
-    <el-button 
-      :type="settingStore.lang === 'en' ? 'primary' : ''" 
-      @click="changeLanguage('en')"
-      size="small"
-    >
-      English
-    </el-button>
+  <div class="language-toggle" style="display:flex; gap:8px; align-items:center;">
+    <el-button size="small" :type="current==='zh' ? 'primary' : 'default'" @click="switchTo('zh')">繁體中文</el-button>
+    <el-button size="small" :type="current==='en' ? 'primary' : 'default'" @click="switchTo('en')">English</el-button>
   </div>
 </template>
 
 <script setup>
-import { useI18n } from 'vue-i18n'
-import { useSettingStore } from '@/store/setting.js'
+import { ref } from 'vue';
+import i18n from '@/i18n/index.js';
+import { useSettingStore } from '@/store/setting.js';
 
-const { locale } = useI18n()
-const settingStore = useSettingStore()
+const settingStore = useSettingStore();
+const current = ref(settingStore.lang || i18n.global.locale.value || 'zh');
 
-const changeLanguage = (lang) => {
-  settingStore.lang = lang
-  locale.value = lang
+function switchTo(lang) {
+  if (!lang) return;
+  settingStore.lang = lang;
+  i18n.global.locale.value = lang;
+  current.value = lang;
+  try {
+    localStorage.setItem('lang', lang);
+  } catch (e) {
+    // ignore
+  }
 }
 </script>
 
 <style scoped>
-.language-toggle {
-  display: flex;
-  gap: 8px;
-}
+.language-toggle { user-select: none; }
 </style>
