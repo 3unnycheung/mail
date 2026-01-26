@@ -10,6 +10,7 @@
     <div v-else :style="background"></div>
     <div class="form-wrapper">
       <div class="container">
+        <LanguageToggle />
         <span class="form-title">{{ settingStore.settings.title }}</span>
         <span class="form-desc" v-if="show === 'login'">{{ $t('loginTitle') }}</span>
         <span class="form-desc" v-else>{{ $t('regTitle') }}</span>
@@ -140,9 +141,6 @@
         </el-button>
       </div>
     </el-dialog>
-    <a class="github" href="https://github.com/maillab/cloud-mail">
-      <Icon icon="mingcute:github-line" color="#1890ff" width="20" height="20" />
-    </a>
   </div>
 </template>
 
@@ -162,6 +160,7 @@ import {loginUserInfo} from "@/request/my.js";
 import {permsToRouter} from "@/perm/perm.js";
 import {useI18n} from "vue-i18n";
 import {oauthBindUser, oauthLinuxDoLogin} from "@/request/ouath.js";
+import LanguageToggle from "@/components/LanguageToggle.vue";
 
 const {t} = useI18n();
 const accountStore = useAccountStore();
@@ -674,23 +673,6 @@ function submitRegister() {
 .setting-icon {
   position: relative;
   top: 6px;
-}
-
-.github {
-  position: fixed;
-  width: 35px;
-  height: 35px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  background: var(--el-bg-color);
-  bottom: 10px;
-  right: 10px;
-  z-index: 1000;
-  border: 1px solid var(--el-border-color-light);
-  box-shadow: var(--el-box-shadow-light);
-  cursor: pointer;
 }
 
 :deep(.el-input-group__append) {
